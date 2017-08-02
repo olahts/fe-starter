@@ -60,7 +60,7 @@ export default {
 				nextOfKin: 'Mr Kola Oba',
 				nextOfKinMobile: '09034034034',
 			},
-			requests: [
+			messages: [
 				{
 					from: '314343',
 					name: 'Pharm Frank',
@@ -138,7 +138,7 @@ export default {
 					rating: '2',
 				},
 			],
-			requests: [
+			messages: [
 				{
 					from: '310943',
 					name: 'Goood',
