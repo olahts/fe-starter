@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
-import {
-  StyleSheet,
-  View,
-  Text,
-} from 'react-native'
-import { Button, TextInput, Alert } from '../utils/components'
+import { StyleSheet, View, Text, } from 'react-native'
 import { connect } from 'react-redux'
 import actions from './actions'
 import style from './styles'
+import { Button, TextInput, Alert } from '../utils/components'
 
-class AuthSignUp extends Component {
+class SignUpScreen extends Component {
 
   constructor(props) {
     super(props)
@@ -27,11 +23,11 @@ class AuthSignUp extends Component {
   }
 
   signup(){
-
+    this.props.signup(this.state)
   }
 
   login(){
-
+    this.props.login({})
   }
 
   render() {
@@ -58,18 +54,19 @@ class AuthSignUp extends Component {
 
 }
 
-const styles = StyleSheet.create(style.usersignup)
+const styles = StyleSheet.create(style)
 
 const stateToProps = ({ auth }) => {
   return {
-    auth: auth,
+    signup: auth.signup,
   }
 }
 
 const dispatchToProps = (dispatch) => {
   return {
     signup: (params) => dispatch(actions.signup(params)),
+    login: (params) => dispatch(actions.gotoLogin(params)),
   }
 }
 
-export default connect(stateToProps,dispatchToProps)(AuthSignUp)
+export default connect(stateToProps,dispatchToProps)(SignUpScreen)

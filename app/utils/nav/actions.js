@@ -14,15 +14,6 @@ export default {
 		}
 	},
 
-	gotoLogin: (params) => {
-		return (dispatch) => {
-			dispatch({
-				type: constants.GOTO_LOGIN,
-				payload: testdata,
-			})
-		}
-	},
-
 	gotoId: (params) => {
 		return (dispatch) => {
 			dispatch({

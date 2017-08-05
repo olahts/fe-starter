@@ -1,19 +1,16 @@
 import { NavigationActions } from 'react-navigation';
-import AppNavigator from './AppNavigator' 
+import AppNavigator from './AppNavigator'
 import constants from './constants'
 
 const initialAction = AppNavigator.router.getActionForPathAndParams('auth');
 const initialState = AppNavigator.router.getStateForAction(initialAction);
 
 export default (state = initialState, action) => {
-  
+
   	let nextState = Object.assign({}, state);
 
   	switch (action.type){
 		case constants.GO_BACK:
-			break;
-		case constants.GOTO_LOGIN:
-			nextState = initialState
 			break;
 		case constants.GOTO_ID:
 			nextState = AppNavigator.router.getStateForAction(NavigationActions.navigate({ routeName: 'id' }), state);
@@ -30,10 +27,9 @@ export default (state = initialState, action) => {
 		case constants.GOTO_SEARCH:
 			nextState = AppNavigator.router.getStateForAction(NavigationActions.navigate({ routeName: 'search' }), state);
 			break;
-		default: 
+		default:
 			break;
 	}
 
   	return nextState;
 }
-

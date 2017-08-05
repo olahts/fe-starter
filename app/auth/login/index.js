@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Text, } from 'react-native'
-import { Button, TextInput, Alert } from '../utils/components'
 import { connect } from 'react-redux'
 import actions from './actions'
 import style from './styles'
+import { Button, TextInput, Alert } from '../utils/components'
 
-class AuthLogin extends Component {
+class LoginScreen extends Component {
 
   constructor(props) {
     super(props)
@@ -21,18 +21,18 @@ class AuthLogin extends Component {
     })
   }
 
-  signup(){
-
-  }
-
   login(){
     this.props.login(this.state)
+  }
+
+  signup(){
+    this.props.signup({})
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Alert style={styles.alert} message={this.props.auth.error}/>
+        <Alert style={styles.alert} message={this.props.login.user}/>
         <View style={styles.inputelements} >
           <TextInput placeholder={'Username'} onChangeHandler={this.handleInputChange.bind(this, 'username')} />
           <TextInput placeholder={'Password'} onChangeHandler={this.handleInputChange.bind(this, 'passowrd')} secureTextEntry={true}/>
@@ -49,18 +49,20 @@ class AuthLogin extends Component {
 
 }
 
-const styles = StyleSheet.create(style.userlogin)
+
+const styles = StyleSheet.create(style)
 
 const stateToProps = ({ auth }) => {
   return {
-    auth: auth,
+    login: auth.login,
   }
 }
 
 const dispatchToProps = (dispatch) => {
   return {
     login: (params) => dispatch(actions.login(params)),
+    signup: (params) => dispatch(actions.gotoSignup(params)),
   }
 }
 
-export default connect(stateToProps,dispatchToProps)(AuthLogin)
+export default connect(stateToProps,dispatchToProps)(LoginScreen)

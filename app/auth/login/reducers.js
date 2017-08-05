@@ -1,9 +1,8 @@
 import constants from './constants'
 
 var initialState = {
-	loginSuccess: false,
-	username: '',	
-	error: '',
+  loginSuccess: false,
+  user: null,
 }
 
 export default (state = initialState, action) => {
@@ -11,21 +10,16 @@ export default (state = initialState, action) => {
 
 	switch (action.type){
 		case constants.LOGIN_SUCCESS:
-			newState = action.payload
-			break;
+      newState.loginSuccess = true
+      newState.user = action.payload
+      break;
 		case constants.LOGIN_FAIL:
-			newState.error = action.payload
+			newState.loginSuccess = false
+      newState.user = action.payload
 			break;
-		case constants.LOGOUT:
-			break;
-		case constants.SIGNUP_SUCCESS:
-			break;
-		case constants.SIGNUP_FAIL:
-			break;
-		default: 
+		default:
 			break;
 	}
 
 	return newState ;
 }
-
