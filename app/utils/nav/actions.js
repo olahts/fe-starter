@@ -1,71 +1,33 @@
 import constants from './constants'
-import { api, validate } from '../'
-import testdata from '../testdata'
-
 
 export default {
+
+	gotoAuth: (params) => {
+		return (dispatch) => {
+			dispatch({
+				type: constants.GOTO_AUTH,
+				payload: params,
+			})
+		}
+	},
 
 	goBack: (params) => {
 		return (dispatch) => {
 			dispatch({
 				type: constants.GO_BACK,
-				payload: testdata,
+				payload: params,
 			})
 		}
 	},
 
-	gotoLogin: (params) => {
+	gotoTabs: (params) => {
 		return (dispatch) => {
 			dispatch({
-				type: constants.GOTO_LOGIN,
-				payload: testdata,
+				type: constants.GOTO_TABS,
+				payload: params,
 			})
 		}
 	},
 
-	gotoId: (params) => {
-		return (dispatch) => {
-			dispatch({
-				type: constants.GOTO_ID,
-				payload: 'params',
-			})
-		}
-	},
-
-	gotoMessage: (params) => {
-		return (dispatch) => {
-			dispatch({
-				type: constants.GOTO_REQUEST,
-				payload: testdata,
-			})
-		}
-	},
-
-	gotoHome: (params) => {
-		return (dispatch) => {
-			dispatch({
-				type: constants.GOTO_PROFILE,
-				payload: testdata,
-			})
-		}
-	},
-
-	gotoMessages: (params) => {
-		return (dispatch) => {
-			dispatch({
-				type: constants.GOTO_MESSAGES,
-				payload: testdata,
-			})
-		}
-	},
-
-	gotoSearch: (params) => {
-		return (dispatch) => {
-			dispatch({
-				type: constants.GOTO_SEARCH,
-				payload: testdata,
-			})
-		}
-	},
 
 }

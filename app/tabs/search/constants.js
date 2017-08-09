@@ -1,0 +1,5 @@
+export default {
+
+	LOAD_SEARCH: 'LOAD_SEARCH',
+	REFRESH_SEARCH: 'REFRESH_SEARCH',
+}

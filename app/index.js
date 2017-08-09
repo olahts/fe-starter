@@ -2,18 +2,14 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
-import { authreducer} from './auth'
-import { idreducer} from './id'
-import { homereducer} from './home'
-import { messagereducer} from './message'
-import { AppWithNavigationState, navreducer } from './utils/nav'
+import NavState, { navreducers } from './utils/nav'
+import { authreducers } from './auth'
+import { tabsreducers } from './tabs'
 
 const reducers = combineReducers({
-  auth: authreducer,
-  id: idreducer,
-  home: homereducer,
-  message: messagereducer,
-  nav: navreducer,
+  auth: authreducers,
+  tabs: tabsreducers,
+  nav: navreducers,
 })
 
 const store = createStore( reducers, applyMiddleware(thunk) )
@@ -21,7 +17,7 @@ const store = createStore( reducers, applyMiddleware(thunk) )
 const App = () => {
   return (
       <Provider store={store}>
-        <AppWithNavigationState />
+        <NavState />
       </Provider>
     )
 }
