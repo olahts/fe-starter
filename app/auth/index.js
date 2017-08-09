@@ -2,14 +2,14 @@ import React from 'react'
 import Swiper from 'react-native-swiper'
 import { connect } from 'react-redux';
 import { combineReducers } from 'redux'
-import { NavState, navreducer } from './utils/nav'
-import loginreducer from './login/reducers'
-import signupreducer from './signup/reducers'
+import NavState, { navreducers } from './utils/nav'
+import { loginreducers } from './login'
+import { signupreducers } from './signup'
 
-const authreducer = combineReducers({
-  login: loginreducer,
-  signup: signupreducer,
-  nav: navreducer,
+export const authreducers = combineReducers({
+  login: loginreducers,
+  signup: signupreducers,
+  nav: navreducers,
 })
 
 const Auth = (props) => {
@@ -23,9 +23,4 @@ const stateToProps = (state) => {
   }
 }
 
-const AuthScreen = connect(stateToProps)(Auth)
-
-export {
-	AuthScreen,
-	authreducer,
-}
+export default connect(stateToProps)(Auth)

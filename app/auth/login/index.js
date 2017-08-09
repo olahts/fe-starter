@@ -4,8 +4,9 @@ import { connect } from 'react-redux'
 import actions from './actions'
 import style from './styles'
 import { Button, TextInput, Alert } from '../utils/components'
+export {default as loginreducers} from './reducers'
 
-class LoginScreen extends Component {
+class Login extends Component {
 
   constructor(props) {
     super(props)
@@ -32,7 +33,7 @@ class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Alert style={styles.alert} message={this.props.login.user}/>
+        <Alert style={styles.alert} message={''}/>
         <View style={styles.inputelements} >
           <TextInput placeholder={'Username'} onChangeHandler={this.handleInputChange.bind(this, 'username')} />
           <TextInput placeholder={'Password'} onChangeHandler={this.handleInputChange.bind(this, 'passowrd')} secureTextEntry={true}/>
@@ -65,4 +66,4 @@ const dispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(stateToProps,dispatchToProps)(LoginScreen)
+export default connect(stateToProps,dispatchToProps)(Login)

@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, } from 'react-native'
 import { connect } from 'react-redux'
 import actions from './actions'
+export {default as signupreducers} from './reducers'
 import style from './styles'
 import { Button, TextInput, Alert } from '../utils/components'
 
-class SignUpScreen extends Component {
+class SignUp extends Component {
 
   constructor(props) {
     super(props)
@@ -69,4 +70,4 @@ const dispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(stateToProps,dispatchToProps)(SignUpScreen)
+export default connect(stateToProps,dispatchToProps)(SignUp)

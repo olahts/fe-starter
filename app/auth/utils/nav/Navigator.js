@@ -1,10 +1,10 @@
 import { StackNavigator } from 'react-navigation'
-import LoginScreen from '../../login'
-import SignupScreen from '../../signup'
+import Login from '../../login'
+import Signup from '../../signup'
 
 const screens = {
-    login: { screen: LoginScreen },
-    signup: { screen: SignupScreen },
+    login: { screen: Login },
+    signup: { screen: Signup },
 }
 
 export default StackNavigator(screens,{ headerMode: 'none'})

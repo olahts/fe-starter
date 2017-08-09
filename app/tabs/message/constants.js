@@ -1,0 +1,5 @@
+export default {
+
+	LOAD_MESSAGE: 'LOAD_MESSAGE',
+	REFRESH_MESSAGE: 'REFRESH_MESSAGE',
+}
