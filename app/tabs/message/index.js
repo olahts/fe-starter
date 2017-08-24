@@ -5,7 +5,6 @@ import {
   Text,
 } from 'react-native'
 import style from './styles'
-export { default as messagereducers } from './reducers'
 
 
 class Message extends Component {

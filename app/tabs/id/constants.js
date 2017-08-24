@@ -1,5 +1,6 @@
 export default {
 
-	LOAD_ID: 'LOAD_ID',
-	REFRESH_ID: 'REFRESH_ID',
+	GO_BACK: 'GO_BACK',
+    GOTO_CARD: 'GOTO_CARD',
+    GOTO_HISTORIES: 'GOTO_HISTORIES',
 }

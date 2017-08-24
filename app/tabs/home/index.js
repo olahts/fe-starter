@@ -5,12 +5,9 @@ import {
   Text,
 } from 'react-native'
 import style from './styles'
-export { default as homereducers } from './reducers'
 
 class Home extends Component {
   constructor(props){
-    console.log('Home')
-    console.log(props)
     super(props)
   }
 

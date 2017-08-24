@@ -1,26 +1,15 @@
 import React from 'react'
-import Swiper from 'react-native-swiper'
 import { connect } from 'react-redux';
-import { combineReducers } from 'redux'
-import NavState, { navreducers } from './utils/nav'
-import { loginreducers } from './login'
-import { signupreducers } from './signup'
+import { addNavigationHelpers } from 'react-navigation'
+import Navigator from './Navigator'
 
-export const authreducers = combineReducers({
-  login: loginreducers,
-  signup: signupreducers,
-  nav: navreducers,
+
+const Auth = ({ dispatch, nav }) =>
+    <Navigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
+
+
+const mapStateToProps = ({ auth }) => ({
+    nav: auth.nav
 })
 
-const Auth = (props) => {
-  return (
-    	<NavState />
-  )
-}
-
-const stateToProps = (state) => {
-  return {
-  }
-}
-
-export default connect(stateToProps)(Auth)
+export default connect(mapStateToProps)(Auth);

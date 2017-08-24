@@ -1,5 +1,5 @@
 import constants from './constants'
-import { api, validate } from '../utils'
+import { api, validate } from '../index'
 
 export default {
 

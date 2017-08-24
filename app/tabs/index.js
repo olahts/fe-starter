@@ -1,24 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { combineReducers } from 'redux'
-import NavState, { navreducers } from './utils/nav'
-import homereducers from './home/reducers'
-import idreducers from './id/reducers'
-import messagereducers from './message/reducers'
-import searchreducers from './search/reducers'
+import Navigator from './Navigator'
 
-export const tabsreducers = combineReducers({
-  home: homereducers,
-  id: idreducers,
-  message: messagereducers,
-  search: searchreducers,
-  nav: navreducers,
-})
+const Tabs = ({ dispatch, nav }) =>
+    <Navigator screenProps={nav}/>
 
-const Tabs = (props) => {
-  return (
-    	<NavState />
-  )
-}
 
-export default Tabs
+const mapStateToProps = ({ nav }) => ({
+    nav: nav.routes[1].params
+});
+
+export default connect(mapStateToProps)(Tabs)

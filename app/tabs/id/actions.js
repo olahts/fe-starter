@@ -1,23 +1,35 @@
 import constants from './constants'
-import { api, validate } from '../utils'
+
+const origin =  'id';
+
 export default {
 
-	load: (params) => {
+	gotoBack: (params) => {
 		return (dispatch) => {
 			dispatch({
-				type: constants.LOAD_ID,
+				type: constants.GO_BACK,
 				payload: params,
 			})
 		}
 	},
 
-	refresh: (params) => {
+	gotoCard: (params) => {
 		return (dispatch) => {
 			dispatch({
-				type: constants.REFRESH_ID,
+				type: constants.GOTO_CARD,
 				payload: params,
 			})
 		}
 	},
+
+    gotoHistories: (params) => {
+        return (dispatch) => {
+            dispatch({
+                type: constants.GOTO_HISTORIES,
+                payload: { ...params, origin},
+            })
+        }
+    },
+
 
 }

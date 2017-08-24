@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
-import {
-  StyleSheet,
-  View,
-  Text,
-} from 'react-native'
+import { StyleSheet, View, } from 'react-native'
+import { connect } from 'react-redux'
 import style from './styles'
-export { default as searchreducers } from './reducers'
+import { SearchBar, OptionButton } from '../../ucomponents'
 
 
 class Search extends Component {
@@ -13,15 +10,25 @@ class Search extends Component {
   render() {
     return (
         <View style={styles.container}>
-          <Text style={styles.welcome}>
-            Search Page
-          </Text>
+            <SearchBar style={styles.searchbar}/>
+            <OptionButton style={styles.optionbutton}/>
         </View>
     )
   }
 
 }
 
-const styles = StyleSheet.create(style)
+const styles = StyleSheet.create(style);
 
-export default Search
+const stateToProps = (state) => {
+    return {
+    }
+};
+
+const dispatchToProps = (dispatch) => {
+    return {
+
+    }
+};
+
+export default connect(stateToProps,dispatchToProps)(Search)

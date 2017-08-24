@@ -1,18 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import { connect } from 'react-redux'
+import { addNavigationHelpers } from 'react-navigation'
 import thunk from 'redux-thunk'
-import NavState, { navreducers } from './utils/nav'
-import { authreducers } from './auth'
-import { tabsreducers } from './tabs'
+import Navigator from './Navigator'
+import reducers from './reducers'
 
-const reducers = combineReducers({
-  auth: authreducers,
-  tabs: tabsreducers,
-  nav: navreducers,
-})
+const store = createStore( reducers, applyMiddleware(thunk) );
 
-const store = createStore( reducers, applyMiddleware(thunk) )
+const Nav = ({ dispatch, nav }) => <Navigator navigation={addNavigationHelpers({ dispatch, state: nav })} />;
+
+const mapStateToProps = ({ nav }) => ({ nav });
+
+const NavState = connect( mapStateToProps )(Nav);
 
 const App = () => {
   return (
@@ -23,3 +24,5 @@ const App = () => {
 }
 
 export default App
+
+
