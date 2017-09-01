@@ -1,30 +1,22 @@
 import constants from './constants'
 
-var initialState = {
-	number: '',
-	title: '',
-	firstname: '',
-	lastname: '',
-	middlename: '',
-	address: '',
-	mobile: '',
-	dob: '',
-	gender: '',
-	image: '',
-	category: '',
-	status: '',
-	specialization: 'Gyna',
-	history: '',
-}
+let initialState = {
+    page: 1,
+    seed: 1,
+    loading: false,
+    refreshing: false,
+    data: [],
+    error: null,
+};
 
 export default (state = initialState, {type, payload}) => {
 	let newState = Object.assign({}, state);
 
 	switch (type){
-		case constants.LOAD_ID:
+		case constants.LOAD_FEEDS:
 			newState = payload;
 			break;
-		case constants.REFRESH_ID:
+		case constants.REFRESH_FEEDS:
 			newState = payload;
 			break;
 		default:

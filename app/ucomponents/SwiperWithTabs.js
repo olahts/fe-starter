@@ -5,7 +5,7 @@ import {
   Text,
 } from 'react-native'
 import ScrollableTabView  from 'react-native-scrollable-tab-view'
-import List from './List'
+import List from './'
 
 const SwiperWithTabs = ({ listdata, showItem }) => {
   return ( 

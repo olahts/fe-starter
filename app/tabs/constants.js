@@ -1,6 +1,5 @@
 export default {
 
-	GO_BACK: 'GO_BACK',
 	GOTO_HOME: 'GOTO_HOME',
 	GOTO_ID: 'GOTO_ID',
 	GOTO_MESSAGE: 'GOTO_MESSAGE',

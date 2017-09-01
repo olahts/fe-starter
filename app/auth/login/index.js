@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, } from 'react-native'
+import { StyleSheet, View, } from 'react-native'
 import { connect } from 'react-redux'
 import actions from './actions'
 import style from './styles'
-import { Button, TextInput, Alert } from '../'
+import navconstants from '../constants'
+import { Button, TextInput, Alert } from '../../ucomponents/index'
 
 class Login extends Component {
 
@@ -26,7 +27,7 @@ class Login extends Component {
   }
 
   signup(){
-    this.props.signup({})
+    this.props.navigateTo({route: navconstants.GOTO_SIGNUP, params:{}})
   }
 
   render() {
@@ -61,7 +62,7 @@ const stateToProps = ({ auth }) => {
 const dispatchToProps = (dispatch) => {
   return {
     login: (params) => dispatch(actions.login(params)),
-    signup: (params) => dispatch(actions.gotoSignup(params)),
+    navigateTo: (params) => dispatch(actions.navigateTo(params)),
   }
 }
 

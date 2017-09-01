@@ -4,11 +4,10 @@ export default {
 			flexDirection: "column",
 			backgroundColor: '#F5FCFF',
 		},
-	    searchbar: {
-		    alignSelf: 'center',
-		},
-		optionbutton: {
-            alignSelf: 'center',
+	    welcome: {
+		    fontSize: 20,
+		    textAlign: 'center',
+		    margin: 10,
 		},
 
 }

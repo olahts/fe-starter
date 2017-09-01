@@ -8,11 +8,11 @@ export default {
 		.get(url)
 		.query(params)
 		.set('Accept', 'application/json')
-		.end((err, res) => !err ? reject('API failed') : 
+		.end((err, res) => err ? reject('API failed') :
 			resolve (testdata.user) )
 	}),
 
-	post: (url, params, callback) => {
+    post: (url, params, callback) => {
 		superagent
 		   .post(url)
 		   .send(params)
@@ -33,5 +33,15 @@ export default {
 
 	delete: () => {
 
-	}
+	},
+
+    getMock: (url, params) => new Promise( (resolve, reject) => {
+        superagent
+            .get(url)
+            .query(params)
+            .set('Accept', 'application/json')
+            .end((err, res) => null ? reject ('API failed') :
+                resolve (testdata[params.seed]) )
+    }),
+
 }

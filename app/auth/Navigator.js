@@ -1,6 +1,6 @@
 import { StackNavigator } from 'react-navigation'
-import Login from '../ucomponents/login'
-import Signup from '../ucomponents/signup'
+import Login from './login'
+import Signup from './signup'
 
 const screens = {
     login: { screen: Login },

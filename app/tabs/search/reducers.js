@@ -1,7 +1,7 @@
 import constants from './constants'
 
 var initialState = {
-	feeds: [{
+	messages: [{
 			id: '',
 			name: '',
 			title: '',

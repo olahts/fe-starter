@@ -1,9 +1,127 @@
 export default {
-	loginSuccess: true,
-	error: {
-		reason: 'Login',
-		message: 'Invalid credentials',
-	},
+    error: {
+        reason: 'Login',
+        message: 'Invalid credentials',
+    },
+    histories: [
+            {
+				_id: 1,
+				name: {
+					first: 'DSDSS',
+					last: 'FFGDG'
+				},
+				email: '',
+				picture: {
+                    thumbnail: 'fdsfsdf',
+                    uri: 'sdfdsf'
+
+                }
+            },
+            {
+                _id: 2,
+                name: {
+                    first: 'DSDSS',
+                    last: 'FFGDG'
+                },
+                email: '',
+                picture: {
+                    thumbnail: 'fdsfsdf',
+                    uri: 'sdfdsf'
+
+                }
+            },
+            {
+                _id: 3,
+                name: {
+                    first: 'DSDSS',
+                    last: 'FFGDG'
+                },
+                email: '',
+                picture: {
+                    thumbnail: 'fdsfsdf',
+                    uri: 'sdfdsf'
+
+                }
+            },
+	],
+    feeds: [
+        {
+            _id: 1,
+            from: '310943',
+            name: 'Goood',
+            image: 'FDFGDFGDFG',
+            time: '23-04-2017',
+            message: 'Result',
+            category: 'Drug',
+            comments: [
+                {
+                    _id: 1,
+                    from: '',
+                    name: '',
+					image: '',
+                    time: '',
+                    message: '',
+                }
+            ],
+        },
+        {
+            _id: 2,
+            from: '310943',
+            name: 'Goood',
+            image: 'FDFGDFGDFG',
+            time: '23-04-2017',
+            message: 'Result',
+            category: 'Drug',
+            comments: [
+                {
+                    _id: 1,
+                    from: '',
+                    name: '',
+                    image: '',
+                    time: '',
+                    message: '',
+                }
+            ],
+        },
+        {
+            _id: 3,
+            from: '310943',
+            name: 'Goood',
+            image: 'FDFGDFGDFG',
+            time: '23-04-2017',
+            message: 'Result',
+            category: 'Drug',
+            comments: [
+                {
+                    _id: 1,
+                    from: '',
+                    name: '',
+                    image: '',
+                    time: '',
+                    message: '',
+                }
+            ],
+        },
+        {
+            _id: 4,
+            from: '310943',
+            name: 'Goood',
+            image: 'FDFGDFGDFG',
+            time: '23-04-2017',
+            message: 'Result',
+            category: 'Drug',
+            comments: [
+                {
+                    _id: 1,
+                    from: '',
+                    name: '',
+                    image: '',
+                    time: '',
+                    message: '',
+                }
+            ],
+        },
+    ],
 	username: 'gjane',
 	user: {
 		id: {

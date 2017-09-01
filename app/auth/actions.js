@@ -21,4 +21,13 @@ export default {
 		}
 	},
 
+    gotoTabs: (params) => {
+        return (dispatch) => {
+            dispatch({
+                type: constants.GOTO_TABS,
+                payload: params,
+            })
+        }
+    },
+
 }

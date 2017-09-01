@@ -1,5 +1,5 @@
-export default {
+export default (origin) => ({
 
-    LOAD_HISTORIES: 'LOAD_HISTORIES',
-	REFRESH_HISTORIES: 'REFRESH_HISTORIES',
-}
+    LOAD_HISTORIES: origin + '_LOAD_HISTORIES',
+	REFRESH_HISTORIES: origin + '_REFRESH_HISTORIES',
+})

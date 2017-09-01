@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import navreducers from './navreducers'
-import loginreducers from '../ucomponents/login/reducers'
-import signupreducers from '../ucomponents/signup/reducers'
+import loginreducers from './login/reducers'
+import signupreducers from './signup/reducers'
 
 export default combineReducers({
     login: loginreducers,

@@ -1,6 +1,7 @@
 import React from 'react'
 import { StackNavigator } from 'react-navigation'
-import Card from './card';
+import Feeds from './feeds'
+import Feed from './feed';
 import Histories from '../../ucomponents/histories'
 
 const settings = {
@@ -9,7 +10,8 @@ const settings = {
 
 
 const screens = {
-    card: { screen: Card },
+    feeds: { screen: Feeds },
+    feed: { screen: Feed },
     histories: { screen: Histories },
 };
 

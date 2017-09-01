@@ -1,14 +1,14 @@
 import React, { PropTypes } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import constants from './constants'
 
-const historiesRoute =  'Histories';
 
-const OptionBar = ({ style, origin, navigateTo }) => {
+const OptionBar = ({ style, navigateTo, navconstants, histories }) => {
 
     return (
 	        <View style={[styles.container, style ]}>
                 <Text style={styles.label}> Add </Text>
-                <TouchableOpacity  underlayColor="#ccc"  onPress = { () => navigateTo({route: historiesRoute, params:{origin} }) }>
+                <TouchableOpacity  underlayColor="#ccc"  onPress = { () => navigateTo({route: navconstants.GOTO_HISTORIES, params:{ navigateTo, navconstants, ...histories} }) }>
                     <Text style={styles.label} > History </Text>
                 </TouchableOpacity>
                 <Text style={styles.label}> Refer </Text>

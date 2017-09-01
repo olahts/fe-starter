@@ -2,17 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addNavigationHelpers } from 'react-navigation'
 import Navigator from './Navigator'
+import constants from './constants'
 
-const origin = 'id';
-
-const Id = ({ dispatch, nav, user }) => {
-    return <Navigator navigation={addNavigationHelpers({ dispatch, state: nav })} screenProps={{origin, user}}/>;
+const Id = ({ dispatch, nav }) => {
+    return <Navigator navigation={addNavigationHelpers({ dispatch, state: nav })} />;
 };
 
 
-const mapStateToProps = ({ tabs, ...state }) => ({
+const mapStateToProps = ({ tabs }) => ({
     nav: tabs.id.nav,
-    user: state.nav.routes[1].params
 });
 
 export default connect(mapStateToProps)(Id)

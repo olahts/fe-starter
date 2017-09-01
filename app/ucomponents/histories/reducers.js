@@ -1,36 +1,25 @@
-import constants from './constants'
+export default {
 
-var initialState = {
-	number: '',
-	title: '',
-	firstname: '',
-	lastname: '',
-	middlename: '',
-	address: '',
-	mobile: '',
-	dob: '',
-	gender: '',
-	image: '',
-	category: '',
-	status: '',
-	specialization: 'Gyna',
-	history: '',
-};
+    initialState: {
+        page: 1,
+        seed: 1,
+        loading: false,
+        refreshing: false,
+        data: [],
+        error: null,
+    },
 
-export default (state = initialState, {type, payload}) => {
-	let newState = Object.assign({}, state);
-
-	switch (type){
-		case constants.LOAD_HISTORIES:
-			newState = payload;
-			break;
-		case constants.REFRESH_HISTORIES:
-			newState = payload;
-			break;
-		default:
-			newState = initialState;
-			break;
-	}
-
-	return newState ;
+	switcher: (constants, newState, {type, payload}) => {
+        switch (type){
+            case constants.LOAD_HISTORIES:
+                newState = payload;
+                break;
+            case constants.REFRESH_HISTORIES:
+                newState = payload;
+                break;
+            default:
+                break;
+        }
+        return newState;
+	},
 }

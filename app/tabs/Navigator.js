@@ -14,13 +14,6 @@ const settings = {
 }
 
 const screens = {
-    id: {
-      screen: Id,
-      navigationOptions: {
-        tabBarLabel: 'Id',
-        tabBarIcon: ({ tintColor }) => <Icon name="perm-identity" size={30} color={tintColor} />,
-      },
-    },
     home: {
       screen: Home,
       navigationOptions: {
@@ -41,6 +34,13 @@ const screens = {
         tabBarLabel: 'Message',
         tabBarIcon: ({ tintColor }) => <Icon name="email" size={30} color={tintColor} />,
       },
+    },
+    id: {
+        screen: Id,
+        navigationOptions: {
+            tabBarLabel: 'Id',
+            tabBarIcon: ({ tintColor }) => <Icon name="perm-identity" size={30} color={tintColor} />,
+        },
     },
 }
 

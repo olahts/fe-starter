@@ -16,7 +16,7 @@ export default {
 		return (dispatch) => {
 			dispatch({
 				type: constants.REFRESH_SEARCH,
-				payload: '',
+				payload: params,
 			})
 		}
 	},

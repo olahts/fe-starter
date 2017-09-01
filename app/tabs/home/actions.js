@@ -1,24 +1,45 @@
 import constants from './constants'
-import { api, validate } from '../index'
+
 
 export default {
 
-	load: (params) => {
+	gotoBack: (params) => {
 		return (dispatch) => {
 			dispatch({
-				type: constants.LOAD_HOME,
+				type: constants.GO_BACK,
 				payload: params,
 			})
 		}
 	},
 
-	refresh: (params) => {
+	gotoFeeds: (params) => {
 		return (dispatch) => {
 			dispatch({
-				type: constants.REFRESH_HOME,
-				payload: '',
+				type: constants.GOTO_FEEDS,
+				payload: { origin: constants.ORIGIN, ...params},
 			})
 		}
 	},
+
+    gotoFeed: (params) => {
+        return (dispatch) => {
+            dispatch({
+                type: constants.GOTO_FEED,
+                payload: { origin: constants.ORIGIN, ...params},
+            })
+        }
+    },
+
+    gotoHistories: (params) => {
+        return (dispatch) => {
+            dispatch({
+                type: constants.GOTO_HISTORIES,
+                payload: params,
+            })
+        }
+    },
+
+
+
 
 }

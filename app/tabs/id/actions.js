@@ -1,6 +1,5 @@
 import constants from './constants'
 
-const origin =  'id';
 
 export default {
 
@@ -26,10 +25,12 @@ export default {
         return (dispatch) => {
             dispatch({
                 type: constants.GOTO_HISTORIES,
-                payload: { ...params, origin},
+                payload: params,
             })
         }
     },
+
+
 
 
 }

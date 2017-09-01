@@ -1,28 +1,16 @@
-import React, { Component } from 'react'
-import {
-  StyleSheet,
-  View,
-  Text,
-} from 'react-native'
-import style from './styles'
+import React from 'react'
+import { connect } from 'react-redux'
+import { addNavigationHelpers } from 'react-navigation'
+import Navigator from './Navigator'
+import constants from './constants'
 
-class Home extends Component {
-  constructor(props){
-    super(props)
-  }
+const Home = ({ dispatch, nav }) => {
+    return <Navigator navigation={addNavigationHelpers({ dispatch, state: nav })} />;
+};
 
-  render() {
-    return (
-        <View style={styles.container}>
-          <Text style={styles.welcome}>
-            Home Page
-          </Text>
-        </View>
-    )
-  }
 
-}
+const mapStateToProps = ({ tabs }) => ({
+    nav: tabs.home.nav,
+});
 
-const styles = StyleSheet.create(style)
-
-export default Home
+export default connect(mapStateToProps)(Home)
